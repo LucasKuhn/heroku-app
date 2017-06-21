@@ -1,7 +1,13 @@
 
 <h1>Listing articles</h1>
 
-<%= link_to 'New article', new_article_path %>
+<p>
+<%= link_to_if(Article.all.count == 0, "Create your first article!", { controller: "articles", action: "new" }) %>
+</p>
+<%= link_to 'New article(with link_to)', new_article_path %>
+<a href="/articles/new">New article(normal a tag)</a>
+
+
 <table>
   <tr>
     <th>Title</th>
